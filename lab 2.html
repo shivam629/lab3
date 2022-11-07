@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HOSPITAL MANAGEMENT</h1>
+    <p>These are some snapshots of xrays of the patient</p>
+
+
+<video width="320" height="240" autoplay muted>
+  <source src="istockphoto-481976055-640_adpp_is.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</style>
+<body>
+
+<h2>These are some basic wards in any hospital</h2>
+
+<table style="width:100%">
+  <tr>
+    <td>emergency ward</td>
+    <td>casualty ward</td>
+    <td>ICU</td>
+  </tr>
+</table>
+
+
+</body>
+<h3>Certian sounds of machine in hospital</h3>
+
+<audio controls>
+  <source src="E:\sem 2\lab2\008770741-hospital-mri.m4a" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+<body>   
+    <h2>Check Your Location</h2>   
+    <button onclick="getlocation();">Check Position</button>   
+    <div id="loc" style="width: 400px; height: 200px; margin-left: 100px;"></div>   
+     
+            <script src="https://maps.google.com/maps/api/js?sensor=false"> </script>   
+     
+            <script type="text/javascript">   
+            function getlocation(){   
+                if(navigator.geolocation){   
+                    navigator.geolocation.getCurrentPosition(showPos, showErr);   
+                }  
+                else{  
+                    alert("Sorry! Geolocation API is not supported.")  
+                }  
+            }   
+     
+            function showPos(position){   
+                latt = position.coords.latitude;   
+                long = position.coords.longitude;   
+                var lattlong = new google.maps.LatLng(latt, long);   
+                var myOptions = {   
+                    center: lattlong,   
+                    zoom: 15,   
+                    mapTypeControl: true,   
+                    navigationControlOptions: {style:google.maps.NavigationControlStyle.SMALL}   
+                }   
+                var maps = new google.maps.Map(document.getElementById("loc"), myOptions);   
+                var markers =   
+                new google.maps.Marker({position:lattlong, map:maps, title:"I am here!"});   
+            }   
+            function showErr(error) {  
+                  switch(error.code){  
+                  case error.PERMISSION_DENIED:  
+                 alert("User denied the request for Geolocation API.");  
+                  break;  
+                 case error.POSITION_UNAVAILABLE:  
+                 alert("USer location information is unavailable.");  
+                break;  
+                case error.TIMEOUT:  
+                alert("The request to get user location timed out.");  
+                break;  
+               case error.UNKNOWN_ERROR:  
+                alert("An unknown error occurred.");  
+                break;  
+               }  
+            }        
+            </script>   
+        </body>   
+
+
+<body>
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+  </canvas>
+</body>
+<h>
+  shape of hospital map is given as
+</h>
+<h2>Using Radio Buttons</h2>
+
+<p>The <strong>input type="radio"</strong> defines a radio button:</p>
+
+<p>Choose what kind of rooms you need:</p>
+<form action="/action_page.php">
+  <input type="radio" id="html" name="fav_language" value="1st AC">
+  <label for="html">1st AC</label><br>
+  <input type="radio" id="css" name="fav_language" value="AC">
+  <label for="css">AC</label><br>
+  <input type="radio" id="javascript" name="fav_language" value="General">
+  <label for="javascript">Generalt</label><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+</body>
+</html>
